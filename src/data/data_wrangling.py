@@ -85,8 +85,18 @@ def clean_data(df):
     # convert data types
     df['hy_scale'] = df['hy_scale'].astype(float)
     df['age'] = df['age'].astype(int)
+    
+    #create age range column
+    bins = [30, 40, 50, 60, 70, 80, 90]
+    labels = ['30-39', '40-49', '50-59', '60-69', '70-79','80+']
+    df['age_range'] = pd.cut(df.age, bins, labels = labels,include_lowest = True)
+    
+    #rearrange columns
+    cols = df.columns.tolist()
+    cols = cols[:2] + cols[-1:] + cols[2:62]
+    df_final = df[cols]
 
-    return df
+    return df_final
 
 
 
