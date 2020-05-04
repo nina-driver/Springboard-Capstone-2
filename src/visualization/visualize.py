@@ -40,7 +40,7 @@ def create_updrs_menu(options):
     return menus
 
 def create_speech_mean_data(df,options):
-    data = []
+    data = [go.Bar()]
     for feature in options:
         x = df.groupby(['status_decode']).mean()[feature]
         colors=['green','orange','purple']
