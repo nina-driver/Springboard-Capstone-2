@@ -24,7 +24,7 @@ def create_updrs_data(df, options):
     return data
                                
 def create_updrs_menu(options):
-    menus = [{'label': '',
+    menus = [{'label': 'All',
               'method': 'update',
               'args': [{'visible': [True]+([False]*54)}, 
               {'title': 'UPDRS Scale Items by Score'}]}]
@@ -52,7 +52,7 @@ def create_speech_mean_data(df,options):
 
 
 def create_speech_mean_menu(options):
-    menus = [{'label': '',
+    menus = [{'label': 'All',
               'method': 'update',
               'args': [{'visible': [True] + ([False] * 24)},
                        {'title': 'Speech Examination Scores'}]}]
